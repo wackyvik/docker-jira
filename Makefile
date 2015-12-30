@@ -1,5 +1,5 @@
 # Container parameters
-NAME = wackyvik/jira
+NAME = larionov/jira
 VERSION = $(shell /bin/cat JIRA.VERSION)
 JAVA_OPTS = -Djava.io.tmpdir=/var/tmp -XX:-UseAESIntrinsics -Dcom.sun.net.ssl.checkRevocation=false
 MEMORY_LIMIT = 8192
@@ -38,4 +38,4 @@ install:
 							--oom-kill-disable=false                                          \
 							--cpuset-cpus=$(CPU_LIMIT_CPUS) --cpu-quota=$(CPU_LIMIT_LOAD_THP) \
 							--blkio-weight=$(IO_LIMIT)                                        \
-							-d wackyvik/jira:$(VERSION)
+							-d larionov/jira:$(VERSION)
